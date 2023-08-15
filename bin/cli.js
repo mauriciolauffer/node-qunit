@@ -90,7 +90,7 @@ for (var key in args) {
             break;
         case '-v':
         case '--version':
-            util.print(
+            console.log(
                 JSON.parse(
                     fs.readFileSync(__dirname + '/../package.json')
                 ).version + '\n'
@@ -99,13 +99,13 @@ for (var key in args) {
         case '-h':
         case '-?':
         case '--help':
-            util.print(help);
+            console.log(help);
             return;
     }
 }
 if(!code || !tests) {
-	util.print(help);
-	util.print('\nBoth --code and --tests arguments are required\n');
+	console.log(help);
+	console.log('\nBoth --code and --tests arguments are required\n');
 	return;
 }
 
